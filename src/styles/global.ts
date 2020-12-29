@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import BackgroundImage from '../assets/background.jpg';
 
 export default createGlobalStyle`
   * {
@@ -10,12 +9,5 @@ export default createGlobalStyle`
   }
   #root {
     margin: 0 auto;
-  }
-  html {
-    background: url(${BackgroundImage}) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;    
   }
 `;
