@@ -1,5 +1,5 @@
 import React from 'react';
-import './button.css';
+import styled, { css } from 'styled-components';
 
 export interface ButtonProps {
   /**
@@ -24,21 +24,16 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
-/**
- * Primary UI component for user interaction
- */
-export const Button: React.FC<ButtonProps> = ({
+const ButtonContent: React.FC<ButtonProps> = ({
   primary = false,
   size = 'medium',
   backgroundColor,
   label,
   ...props
 }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
@@ -46,3 +41,41 @@ export const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
+
+export const Button = styled(ButtonContent)`
+  border: 0;
+  border-radius: 3em;
+  font-weight: 700;
+  font-family: 'Nunito Sans', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+
+  ${props =>props.primary === true && css`
+    color: white;
+    background-color: #1ea7fd;
+  `}
+
+  ${props =>props.primary === false && css`
+    color: #333;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  `}
+
+  ${props =>props.size === 'small' && css`
+    font-size: 12px;
+    padding: 10px 16px;
+  `}
+  
+  ${props =>props.size === 'medium' && css`
+    font-size: 14px;
+    padding: 11px 20px;
+  `}
+
+  ${props =>props.size === 'large' && css`
+    font-size: 16px;
+    padding: 12px 24px;
+  `}
+
+`;
+

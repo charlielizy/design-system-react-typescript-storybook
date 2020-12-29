@@ -1,7 +1,8 @@
 import React from 'react';
+import styled, { css } from 'styled-components';
 
 import { Button } from '../Button/Button';
-import './header.css';
+// import './header.css';
 
 export interface HeaderProps {
   user?: {};
@@ -10,7 +11,7 @@ export interface HeaderProps {
   onCreateAccount: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ user, onLogin, onLogout, onCreateAccount }) => (
+const HeaderContent: React.FC<HeaderProps> = ({ user, onLogin, onLogout, onCreateAccount }) => (
   <header>
     <div className="wrapper">
       <div>
@@ -45,3 +46,7 @@ export const Header: React.FC<HeaderProps> = ({ user, onLogin, onLogout, onCreat
     </div>
   </header>
 );
+
+export const Header = styled(HeaderContent)`
+  
+`;
