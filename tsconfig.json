@@ -13,6 +13,9 @@
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -36,11 +39,12 @@
         "name": "typescript-tslint-plugin"
       }
     ],
-    "noEmit": false
+    "noEmit": true
   },
   "files": [
     "svg.d.ts",
-    "index.d.ts"
+    "index.d.ts",
+    "./src/styles/styled.d.ts",
   ],
   "include": [
     "src/**/*",

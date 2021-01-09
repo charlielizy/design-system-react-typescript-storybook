@@ -1,8 +1,7 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { Button } from '../Button/Button';
-// import './header.css';
 
 export interface HeaderProps {
   user?: {};
@@ -11,8 +10,36 @@ export interface HeaderProps {
   onCreateAccount: () => void;
 }
 
-const HeaderContent: React.FC<HeaderProps> = ({ user, onLogin, onLogout, onCreateAccount }) => (
-  <header>
+const StyledHeader = styled.div`
+  .wrapper {
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  svg {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  h1 {
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 1;
+    margin: 6px 0 6px 10px;
+    display: inline-block;
+    vertical-align: top;
+  }
+`
+const StyledButton = styled(Button)`
+  margin-left: 10px;
+`
+
+export const Header: React.FC<HeaderProps> = ({ user, onLogin, onLogout, onCreateAccount }) => (
+  <StyledHeader>
     <div className="wrapper">
       <div>
         <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -35,18 +62,15 @@ const HeaderContent: React.FC<HeaderProps> = ({ user, onLogin, onLogout, onCreat
       </div>
       <div>
         {user ? (
-          <Button size="small" onClick={onLogout} label="Log out" />
+          <StyledButton size="small" onClick={onLogout} label="Log out" />
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+            <StyledButton size="small" onClick={onLogin} label="Log in" />
+            <StyledButton primary size="small" onClick={onCreateAccount} label="Sign up" />
           </>
         )}
       </div>
     </div>
-  </header>
+  </StyledHeader>
 );
 
-export const Header = styled(HeaderContent)`
-  
-`;

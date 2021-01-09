@@ -22,6 +22,11 @@ export interface ButtonProps {
    * Optional click handler
    */
   onClick?: () => void;
+  /**
+   * Optinal for colors
+   */
+  mode?: 'default' | 'dark' | 'light';
+
 }
 
 const ButtonContent: React.FC<ButtonProps> = ({
@@ -29,6 +34,7 @@ const ButtonContent: React.FC<ButtonProps> = ({
   size = 'medium',
   backgroundColor,
   label,
+  mode = 'default',
   ...props
 }) => {
   return (
@@ -51,9 +57,19 @@ export const Button = styled(ButtonContent)`
   display: inline-block;
   line-height: 1;
 
-  ${props =>props.primary === true && css`
-    color: white;
+  ${props =>props.primary === true && props.mode === 'default' && css`
+    color: ${props => props.theme.color.primary};
     background-color: #1ea7fd;
+  `}
+
+  ${props =>props.primary === true && props.mode === 'dark' && css`
+    color: ${props => props.theme.color.secondary};
+    background-color: ${props => props.theme.background.appInverse}
+  `}
+
+  ${props =>props.primary === true && props.mode === 'light' && css`
+    color: ${props => props.theme.color.secondary};
+    background-color: #ddd;
   `}
 
   ${props =>props.primary === false && css`

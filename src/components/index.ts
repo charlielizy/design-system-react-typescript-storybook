@@ -1,3 +1,4 @@
 export * from './Button/Button'
-export * from './Page/Page'
 export * from './Header/Header'
+export * from './Icon/Icon'
+export * from './Card/Card'
