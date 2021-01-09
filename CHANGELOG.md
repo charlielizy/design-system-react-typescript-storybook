@@ -1,3 +1,15 @@
+# v0.1.5 (Sat Jan 09 2021)
+
+#### ⚠️ Pushed to `master`
+
+- update ([@charlielizy](https://github.com/charlielizy))
+
+#### Authors: 1
+
+- Charlie Li ([@charlielizy](https://github.com/charlielizy))
+
+---
+
 # v0.1.3 (Tue Dec 29 2020)
 
 #### ⚠️ Pushed to `master`
