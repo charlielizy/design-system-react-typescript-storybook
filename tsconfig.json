@@ -39,7 +39,7 @@
         "name": "typescript-tslint-plugin"
       }
     ],
-    "noEmit": true
+    "noEmit": false
   },
   "files": [
     "svg.d.ts",
