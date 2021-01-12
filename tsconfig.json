@@ -44,7 +44,7 @@
   "files": [
     "svg.d.ts",
     "index.d.ts",
-    "./src/styles/styled.d.ts",
+    "src/styles/styled.d.tsx",
   ],
   "include": [
     "src/**/*",
