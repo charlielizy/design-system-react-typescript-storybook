@@ -1,9 +1,5 @@
-// import original module declarations
-import 'styled-components';
 import { CSSProp } from 'styled-components';
-// and extend them!
-declare module 'styled-components' {
-  export interface DefaultTheme {
+  export interface MyThemeProps {
     background: {
       app: string,
       appInverse: string,
@@ -94,4 +90,3 @@ declare module 'styled-components' {
     },
     pageMargins: CSSProp,
   }
-}

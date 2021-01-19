@@ -1,9 +1,11 @@
-import { DefaultTheme, css } from 'styled-components'
+// import { DefaultTheme, css } from 'styled-components'
+import { css } from 'styled-components'
+import { MyThemeProps } from './ITheme'
 
 const breakpoint: number = 600;
 const pageMargin: number = 5.55555;
 
-const Theme: DefaultTheme = {
+export const MyTheme: MyThemeProps= {
   // Global style variables
   background: {
     app: '#F6F9FC',
@@ -111,5 +113,3 @@ const Theme: DefaultTheme = {
     }
     `
 }
-
-export { Theme }

@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
 import styled from 'styled-components';
-import { Theme } from '../styles/theme'
+import { MyTheme } from '../styles/myTheme'
 
 export default {
   title: 'Example/Color',
@@ -18,7 +18,7 @@ const Section = styled.section`
   .story-color-title {
     font-weight: 600;
     min-width: 200px;
-    font-family: ${props => props.theme.typography.type.primary};
+    font-family: ${MyTheme.typography.type.primary};
   }
   .story-color-content {
     display: flex;
@@ -34,12 +34,12 @@ const Section = styled.section`
 const ColorRender = styled.div`
   &:hover .story-bg {
       cursor: pointer;
-      box-shadow: ${props => props.theme.shadow.secondary};
+      box-shadow: ${MyTheme.shadow.secondary};
       font-weight: 700;
   }
   &:hover .story-text {
       cursor: pointer;
-      box-shadow: ${props => props.theme.shadow.secondary};
+      box-shadow: ${MyTheme.shadow.secondary};
       font-weight: 700;
   }
   .story-bg {
@@ -48,7 +48,7 @@ const ColorRender = styled.div`
     height: 6rem;
     line-height: 6rem;
     font-size: 12px;
-    font-family: ${props => props.theme.typography.type.primary};
+    font-family: ${MyTheme.typography.type.primary};
     text-align: center;
   }
   .story-text {
@@ -59,7 +59,7 @@ const ColorRender = styled.div`
     line-height: 2rem;
     text-align: center;
     font-size: 12px;
-    font-family: ${props => props.theme.typography.type.primary};
+    font-family: ${MyTheme.typography.type.primary};
     color: #333;
   }
 
@@ -76,13 +76,13 @@ const Template: Story = (args) => ((
   <Section>
     <div className="story-color-section">
       <p className="story-color-title">Color</p>
-      <div className="story-color-content">{Object.entries(Theme.color).map(colorRender)}</div>
+      <div className="story-color-content">{Object.entries(MyTheme.color).map(colorRender)}</div>
     </div>
     <span className="story-clear" />
     <hr />
     <div className="story-color-section">
       <p className="story-color-title">Background Color</p>
-      <div className="story-color-content">{Object.entries(Theme.background).map(colorRender)}</div>
+      <div className="story-color-content">{Object.entries(MyTheme.background).map(colorRender)}</div>
     </div>
     <span className="story-clear" />
   </Section>

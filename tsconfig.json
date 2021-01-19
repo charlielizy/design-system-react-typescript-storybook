@@ -1,59 +1,52 @@
 {
-  "compilerOptions": {
-    "outDir": "dist",
-    "target": "es2015",
-    "lib": [
-      "es5",
-      "es6",
-      "es7",
-      "es2017",
-      "dom"
+    "compilerOptions": {
+        "outDir": "dist",
+        "target": "es2015",
+        "lib": ["es5", "es6", "es7", "es2017", "dom"
+        ],
+        "sourceMap": true,
+        "allowJs": false,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "declaration": true,
+        "baseUrl": ".",
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "jsx": "react-jsx",
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "rootDirs": [
+            "src", "stories"
+        ],
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "typeRoots": [
+            "index.d.ts", "node_modules/@types"
+        ],
+        "plugins": [
+            {
+                "name": "typescript-tslint-plugin"
+            }
+        ],
+        "noEmit": false,
+        "paths": {
+            // for importing 'exported' elements of the package
+            "local-build": ["./dist"],
+            // for importing 'non-exported' elements of the package
+            "dist/*": ["./dist/*"]
+        }
+    },
+    "files": [
+        "svg.d.ts", "index.d.ts",
     ],
-    "sourceMap": true,
-    "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "declaration": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "jsx": "react-jsx",
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "rootDirs": [
-      "src",
-      "stories"
+    "include": [
+        "src/**/*", "stories/**/*"
     ],
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "typeRoots": [
-      "index.d.ts",
-      "node_modules/@types"
-    ],
-    "plugins": [
-      {
-        "name": "typescript-tslint-plugin"
-      }
-    ],
-    "noEmit": false
-  },
-  "files": [
-    "svg.d.ts",
-    "index.d.ts",
-    "src/styles/styled.d.tsx",
-  ],
-  "include": [
-    "src/**/*",
-    "stories/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-    "src/**/*.test.tsx"
-  ]
+    "exclude": ["node_modules", "build", "scripts", "src/**/*.test.tsx"]
 }
+

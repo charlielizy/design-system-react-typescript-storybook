@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+import { MyTheme } from '../../styles/myTheme'
+
 export interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
@@ -58,17 +60,17 @@ export const Button = styled(ButtonContent)`
   line-height: 1;
 
   ${props =>props.primary === true && props.mode === 'default' && css`
-    color: ${props => props.theme.color.primary};
+    color: ${MyTheme.color.primary};
     background-color: #1ea7fd;
   `}
 
   ${props =>props.primary === true && props.mode === 'dark' && css`
-    color: ${props => props.theme.color.secondary};
-    background-color: ${props => props.theme.background.appInverse}
+    color: ${MyTheme.color.secondary};
+    background-color: ${MyTheme.background.appInverse}
   `}
 
   ${props =>props.primary === true && props.mode === 'light' && css`
-    color: ${props => props.theme.color.secondary};
+    color: ${MyTheme.color.secondary};
     background-color: #ddd;
   `}
 
